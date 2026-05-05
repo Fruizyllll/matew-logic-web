@@ -16,7 +16,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -46,9 +46,9 @@
     }
 
     h1, h2, h3, h4, .logo {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.15;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -68,8 +68,9 @@
     }
 
     .logo {
+      font-family: 'Barlow', sans-serif;
       font-size: 1.3rem;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
     .logo span { color: var(--orange); }
 
@@ -178,9 +179,11 @@
     }
 
     .hero-title {
-      font-size: clamp(2.8rem, 6vw, 5.2rem);
-      letter-spacing: -0.03em;
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
       margin-bottom: 1.5rem;
+      padding-bottom: 0.1em;
     }
     .hero-title .accent { color: var(--orange); }
 
@@ -203,7 +206,7 @@
       color: var(--white);
       padding: 0.85rem 2rem;
       border-radius: 8px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
@@ -220,7 +223,7 @@
       color: var(--white-dim);
       padding: 0.85rem 2rem;
       border-radius: 8px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-weight: 600;
       font-size: 1rem;
       transition: border-color 0.2s, color 0.2s;
@@ -235,7 +238,7 @@
     }
     .stat-item {}
     .stat-num {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-size: 2.2rem;
       font-weight: 800;
       color: var(--orange);
@@ -258,9 +261,11 @@
     }
 
     .section-title {
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
       letter-spacing: -0.02em;
+      line-height: 1.15;
       margin-bottom: 1rem;
+      padding-bottom: 0.05em;
     }
 
     .section-sub {
@@ -280,7 +285,6 @@
       background: var(--border);
       border: 1px solid var(--border);
       border-radius: 12px;
-      overflow: hidden;
     }
 
     .problem-card {
@@ -295,7 +299,7 @@
       margin-bottom: 1rem;
     }
     .problem-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 0.6rem;
@@ -316,7 +320,6 @@
       padding: 2.5rem;
       transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
       position: relative;
-      overflow: hidden;
     }
     .service-card::before {
       content: '';
@@ -348,7 +351,7 @@
     }
 
     .service-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 0.7rem;
@@ -408,7 +411,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-weight: 800;
       font-size: 1rem;
       flex-shrink: 0;
@@ -423,7 +426,7 @@
 
     .step-body { padding-top: 0.5rem; }
     .step-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
@@ -455,7 +458,7 @@
       margin-bottom: 0.8rem;
     }
     .example-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 0.6rem;
@@ -469,7 +472,7 @@
     }
     .result-item {}
     .result-num {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-weight: 800;
       font-size: 1.5rem;
       color: var(--orange);
@@ -499,7 +502,7 @@
       background: none;
       border: none;
       color: var(--white);
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       text-align: left;
@@ -586,7 +589,7 @@
       flex-shrink: 0;
     }
     .contact-detail-text strong { display: block; font-size: 0.85rem; color: var(--white-dim); font-weight: 400; }
-    .contact-detail-text span { font-family: 'Syne', sans-serif; font-weight: 600; }
+    .contact-detail-text span { font-family: 'Barlow', sans-serif; font-weight: 600; }
 
     .contact-form {
       background: var(--black-2);
@@ -631,7 +634,7 @@
       color: var(--white);
       border: none;
       border-radius: 8px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       padding: 0.9rem;
@@ -673,7 +676,7 @@
     }
 
     .footer-links h4 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Barlow', sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
       color: var(--white);
@@ -715,14 +718,79 @@
     .main-content.hidden { display: none; }
 
     /* ─── MOBILE ─── */
+    /* ─── TABLET (max 1024px) ─── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .examples-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-wrap { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-title { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+      .section-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+      section { padding: 5rem 5vw; }
+    }
+
+    /* ─── MOBIL (max 768px) ─── */
     @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: var(--black-2); padding: 2rem 5vw; border-bottom: 1px solid var(--border); gap: 1.5rem; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        background: var(--black-2);
+        padding: 2rem 5vw;
+        border-bottom: 1px solid var(--border);
+        gap: 1.5rem;
+        z-index: 99;
+      }
       .nav-links.open { display: flex; }
       .hamburger { display: flex; }
-      .hero-stats { gap: 2rem; }
-      .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      #hero { padding: 7rem 5vw 4rem; min-height: auto; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: -0.01em; }
+      .hero-sub { font-size: 1rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions a { text-align: center; }
+      .hero-stats { flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+      .stat-num { font-size: 1.8rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .examples-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .problems-grid { grid-template-columns: 1fr; }
+
+      section { padding: 4rem 5vw; }
+      .section-title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+      .section-sub { font-size: 0.95rem; margin-bottom: 2.5rem; }
+
+      .service-card { padding: 1.8rem; }
+      .example-card { padding: 1.8rem; }
+      .example-metrics { flex-wrap: wrap; gap: 1rem; }
+      .step-card { padding: 1.8rem; }
+
+      .faq-wrap { max-width: 100%; }
+      .faq-question { font-size: 0.95rem; padding: 1.2rem 1.4rem; }
+      .faq-answer { padding: 0 1.4rem; }
+      .faq-item.open .faq-answer { padding: 0 1.4rem 1.2rem; }
+
+      .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-form input,
+      .contact-form textarea,
+      .contact-form select { font-size: 16px; }
+
       .footer-top { flex-direction: column; gap: 2rem; }
-      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 1.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
+
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: 1rem 1.5rem; }
+    }
+
+    /* ─── MALÝ MOBIL (max 400px) ─── */
+    @media (max-width: 400px) {
+      .hero-title { font-size: 1.9rem; }
+      .logo { font-size: 1.1rem; }
+      .hero-badge { font-size: 0.72rem; padding: 0.35rem 0.8rem; }
+      .stat-num { font-size: 1.6rem; }
+      .section-title { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -1049,7 +1117,7 @@
         </div>
       </div>
       <div class="contact-form">
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;margin-bottom:1.5rem;">Napíšte nám</h3>
+        <h3 style="font-family:'Barlow',sans-serif;font-size:1.3rem;margin-bottom:1.5rem;">Napíšte nám</h3>
         <div class="form-group">
           <label>Meno a priezvisko *</label>
           <input type="text" placeholder="Ján Novák" id="f-name" />
@@ -1112,7 +1180,7 @@
   <h2>8. Cookies</h2>
   <p>Táto webstránka môže používať základné technické cookies nevyhnutné pre fungovanie stránky. Analytické alebo marketingové cookies používame len s vaším súhlasom.</p>
   <br>
-  <a href="#" onclick="showMain()" class="btn-primary" style="display:inline-block;padding:0.7rem 1.5rem;background:var(--orange);color:#fff;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;">← Späť na stránku</a>
+  <a href="#" onclick="showMain()" class="btn-primary" style="display:inline-block;padding:0.7rem 1.5rem;background:var(--orange);color:#fff;border-radius:8px;font-family:'Barlow',sans-serif;font-weight:700;">← Späť na stránku</a>
 </div>
 
 <div class="legal-page" id="page-terms">
@@ -1135,7 +1203,7 @@
   <h2>8. Rozhodné právo</h2>
   <p>Tieto podmienky sa riadia právnym poriadkom Slovenskej republiky. Prípadné spory budú riešené pred príslušným súdom SR.</p>
   <br>
-  <a href="#" onclick="showMain()" class="btn-primary" style="display:inline-block;padding:0.7rem 1.5rem;background:var(--orange);color:#fff;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;">← Späť na stránku</a>
+  <a href="#" onclick="showMain()" class="btn-primary" style="display:inline-block;padding:0.7rem 1.5rem;background:var(--orange);color:#fff;border-radius:8px;font-family:'Barlow',sans-serif;font-weight:700;">← Späť na stránku</a>
 </div>
 
 <div class="legal-page" id="page-cookies">
@@ -1153,7 +1221,7 @@
   <h2>Kontakt</h2>
   <p>Otázky ohľadom cookies zasielajte na info@matewlogic.com.</p>
   <br>
-  <a href="#" onclick="showMain()" class="btn-primary" style="display:inline-block;padding:0.7rem 1.5rem;background:var(--orange);color:#fff;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;">← Späť na stránku</a>
+  <a href="#" onclick="showMain()" class="btn-primary" style="display:inline-block;padding:0.7rem 1.5rem;background:var(--orange);color:#fff;border-radius:8px;font-family:'Barlow',sans-serif;font-weight:700;">← Späť na stránku</a>
 </div>
 
 <!-- ─── FOOTER ─── -->
