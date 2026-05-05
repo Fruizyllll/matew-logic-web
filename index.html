@@ -815,10 +815,30 @@
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 0;
+        align-items: start;
       }
       .hero-image-wrap {
-        display: none;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 320px;
+        margin-top: -1rem;
+        overflow: hidden;
+      }
+      .hero-founder-img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 340px;
+        width: auto;
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+      .hero-image-glow {
+        height: 60%;
+        width: 70%;
       }
     }
 
@@ -971,7 +991,7 @@
         <p class="problem-desc">Kopírovanie dát medzi systémami, ručné odpovede na emaily, manuálne vytváranie reportov – hodiny práce každý deň.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="problem-icon"><svg viewBox="0 0 24 24"><path d="M21 8.5A8.5 8.5 0 1 0 21 15.5"/><line x1="3" y1="11" x2="13" y2="11"/><line x1="3" y1="13" x2="13" y2="13"/></svg></div>
         <div class="problem-title">Drahý obsah a marketing</div>
         <p class="problem-desc">Fotografi, videografi, grafici – kvalitný obsah stojí tisíce eur mesačne. A nestíhate ho tvoriť pravidelne.</p>
       </div>
@@ -1006,7 +1026,7 @@
         </ul>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
         <div class="service-title">AI obsah a vizuály</div>
         <p class="service-desc">Profesionálne fotky, videá a grafiky pre váš marketing – bez fotostúdia, bez fotografa, za zlomok ceny.</p>
         <ul class="service-features">
