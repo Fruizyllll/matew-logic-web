@@ -295,9 +295,22 @@
     .problem-card:hover { background: var(--black-3); }
 
     .problem-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      width: 48px;
+      height: 48px;
+      background: var(--orange-glow);
+      border: 1px solid rgba(255,107,26,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      transition: background 0.3s, transform 0.3s;
     }
+    .problem-card:hover .problem-icon {
+      background: rgba(255,107,26,0.28);
+      transform: scale(1.08);
+    }
+    .problem-icon svg { width: 22px; height: 22px; stroke: var(--orange); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .problem-title {
       font-family: 'Barlow', sans-serif;
       font-weight: 700;
@@ -342,13 +355,19 @@
       width: 52px;
       height: 52px;
       background: var(--orange-glow);
+      border: 1px solid rgba(255,107,26,0.2);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
       margin-bottom: 1.5rem;
+      transition: background 0.3s, transform 0.3s;
     }
+    .service-card:hover .service-icon {
+      background: rgba(255,107,26,0.28);
+      transform: scale(1.08) rotate(-3deg);
+    }
+    .service-icon svg { width: 24px; height: 24px; stroke: var(--orange); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
     .service-title {
       font-family: 'Barlow', sans-serif;
@@ -718,6 +737,79 @@
     .main-content.hidden { display: none; }
 
     /* ─── MOBILE ─── */
+
+    /* ─── HERO LAYOUT WITH FOUNDER IMAGE ─── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 5vw 4rem;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .hero-image-glow {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 60%;
+      background: radial-gradient(ellipse at center bottom, rgba(255,107,26,0.35) 0%, transparent 70%);
+      filter: blur(30px);
+      z-index: 0;
+      border-radius: 50%;
+    }
+
+    .hero-founder-img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      object-fit: contain;
+      object-position: bottom;
+      /* fade bottom into background */
+      -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+      /* subtle fade on sides */
+      filter: drop-shadow(0 0 40px rgba(255,107,26,0.15));
+      animation: floatFounder 6s ease-in-out infinite;
+    }
+
+    @keyframes floatFounder {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .hero-image-wrap {
+        display: none;
+      }
+    }
+
     /* ─── TABLET (max 1024px) ─── */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -818,33 +910,39 @@
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-badge">AI &amp; Automatizácia pre firmy</div>
-      <h1 class="hero-title">
-        Vaša firma.<br>
-        <span class="accent">Inteligentnejšia.</span><br>
-        Rýchlejšia. Lacnejšia.
-      </h1>
-      <p class="hero-sub">
-        Pomáhame slovenským a českým firmám eliminovať manuálnu prácu, znížiť náklady a rásť – pomocou AI automatizácií a inteligentného obsahu.
-      </p>
-      <div class="hero-actions">
-        <a href="#kontakt" class="btn-primary">Začnite zadarmo</a>
-        <a href="#sluzby" class="btn-ghost">Zistite viac</a>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">AI &amp; Automatizácia pre firmy</div>
+        <h1 class="hero-title">
+          Vaša firma.<br>
+          <span class="accent">Inteligentnejšia.</span><br>
+          Rýchlejšia. Lacnejšia.
+        </h1>
+        <p class="hero-sub">
+          Pomáhame slovenským a českým firmám eliminovať manuálnu prácu, znížiť náklady a rásť – pomocou AI automatizácií a inteligentného obsahu.
+        </p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn-primary">Začnite zadarmo</a>
+          <a href="#sluzby" class="btn-ghost">Zistite viac</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">70%</div>
+            <div class="stat-label">priemerná úspora<br>prevádzkového času</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3×</div>
+            <div class="stat-label">rýchlejší obsah<br>bez extra nákladov</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">ROI</div>
+            <div class="stat-label">merateľný výsledok<br>od 1. mesiaca</div>
+          </div>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">70%</div>
-          <div class="stat-label">priemerná úspora<br>prevádzkového času</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">3×</div>
-          <div class="stat-label">rýchlejší obsah<br>bez extra nákladov</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">ROI</div>
-          <div class="stat-label">merateľný výsledok<br>od 1. mesiaca</div>
-        </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-glow"></div>
+        <img src="founder.png" alt="Matew Logic zakladateľ" class="hero-founder-img" />
       </div>
     </div>
   </section>
@@ -856,22 +954,22 @@
     <p class="section-sub">Väčšina firiem stráca desiatky hodín týždenne na úlohách, ktoré môže robiť AI.</p>
     <div class="problems-grid">
       <div class="problem-card">
-        <div class="problem-icon">⏱️</div>
+        <div class="problem-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="problem-title">Manuálna práca ktorá nikdy nekončí</div>
         <p class="problem-desc">Kopírovanie dát medzi systémami, ručné odpovede na emaily, manuálne vytváranie reportov – hodiny práce každý deň.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">💸</div>
+        <div class="problem-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <div class="problem-title">Drahý obsah a marketing</div>
         <p class="problem-desc">Fotografi, videografi, grafici – kvalitný obsah stojí tisíce eur mesačne. A nestíhate ho tvoriť pravidelne.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">📉</div>
+        <div class="problem-icon"><svg viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div>
         <div class="problem-title">Zákazníci padajú cez trhliny</div>
         <p class="problem-desc">Pomalé followupy, zabudnuté leady, nekonzistentná komunikácia – peniaze ktoré odchádzajú ku konkurencii.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">🔄</div>
+        <div class="problem-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
         <div class="problem-title">Nesúvisiace nástroje a systémy</div>
         <p class="problem-desc">CRM, email, fakturácia, sklady – každý systém funguje sám. Žiadna automatická synchronizácia, len manuálna práca.</p>
       </div>
@@ -885,7 +983,7 @@
     <p class="section-sub">Každé riešenie stavíme na mieru – žiadne generické šablóny, len výsledky.</p>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">⚙️</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         <div class="service-title">Biznis automatizácie</div>
         <p class="service-desc">Prepojíme vaše systémy a eliminujeme manuálnu prácu pomocou Make.com a n8n workflow automatizácií.</p>
         <ul class="service-features">
@@ -896,7 +994,7 @@
         </ul>
       </div>
       <div class="service-card">
-        <div class="service-icon">🎨</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div>
         <div class="service-title">AI obsah a vizuály</div>
         <p class="service-desc">Profesionálne fotky, videá a grafiky pre váš marketing – bez fotostúdia, bez fotografa, za zlomok ceny.</p>
         <ul class="service-features">
@@ -907,7 +1005,7 @@
         </ul>
       </div>
       <div class="service-card">
-        <div class="service-icon">📱</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <div class="service-title">AI správa sociálnych sietí</div>
         <p class="service-desc">Kompletný AI-powered social media management – od stratégie cez obsah až po analytiku a reporty.</p>
         <ul class="service-features">
@@ -918,7 +1016,7 @@
         </ul>
       </div>
       <div class="service-card">
-        <div class="service-icon">🤖</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/><path d="M7 11V9a5 5 0 0 1 10 0v2"/></svg></div>
         <div class="service-title">AI lead generation</div>
         <p class="service-desc">Automatizovaný pipeline ktorý nachádza potenciálnych zákazníkov, oslovuje ich a sleduje výsledky za vás.</p>
         <ul class="service-features">
@@ -1094,21 +1192,21 @@
         <p>Bezplatná 30-minútová konzultácia – zistíme kde môžeme vašej firme najviac pomôcť. Žiadne záväzky.</p>
         <div class="contact-detail">
           <div class="contact-detail-item">
-            <div class="contact-detail-icon">📧</div>
+            <div class="contact-detail-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--orange);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <div class="contact-detail-text">
               <strong>Email</strong>
-              <span>info@matewlogic.com</span>
+              <span>contact@matewlogic.com</span>
             </div>
           </div>
           <div class="contact-detail-item">
-            <div class="contact-detail-icon">🌍</div>
+            <div class="contact-detail-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--orange);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
             <div class="contact-detail-text">
               <strong>Pôsobnosť</strong>
               <span>Slovensko &amp; Česká republika</span>
             </div>
           </div>
           <div class="contact-detail-item">
-            <div class="contact-detail-icon">⚡</div>
+            <div class="contact-detail-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--orange);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
             <div class="contact-detail-text">
               <strong>Odpoveď do</strong>
               <span>24 hodín v pracovné dni</span>
@@ -1159,7 +1257,7 @@
   <p class="updated">Posledná aktualizácia: január 2025</p>
   <p>Matew Logic (ďalej len „prevádzkovateľ") spracúva osobné údaje v súlade s nariadením GDPR (EÚ) 2016/679 a zákonom č. 18/2018 Z. z. o ochrane osobných údajov.</p>
   <h2>1. Prevádzkovateľ</h2>
-  <p>Matew Logic<br>Email: info@matewlogic.com</p>
+  <p>Matew Logic<br>Email: contact@matewlogic.com</p>
   <h2>2. Aké údaje zbierame</h2>
   <ul>
     <li>Meno a priezvisko</li>
@@ -1174,7 +1272,7 @@
   <h2>5. Doba uchovávania</h2>
   <p>Vaše údaje uchovávame po dobu nevyhnutnú na vybavenie vášho dopytu, maximálne 3 roky od posledného kontaktu.</p>
   <h2>6. Vaše práva</h2>
-  <p>Máte právo na prístup k údajom, ich opravu, vymazanie, prenosnosť, namietanie a obmedzenie spracúvania. Žiadosti zasielajte na info@matewlogic.com. Máte tiež právo podať sťažnosť na Úrad na ochranu osobných údajov SR (dataprotection.gov.sk).</p>
+  <p>Máte právo na prístup k údajom, ich opravu, vymazanie, prenosnosť, namietanie a obmedzenie spracúvania. Žiadosti zasielajte na contact@matewlogic.com. Máte tiež právo podať sťažnosť na Úrad na ochranu osobných údajov SR (dataprotection.gov.sk).</p>
   <h2>7. Poskytovanie tretím stranám</h2>
   <p>Vaše osobné údaje nepredávame ani neposkytujeme tretím stranám na marketingové účely. Údaje môžu byť zdieľané výlučne s poskytovateľmi nevyhnutných technických služieb (hosting, email) a to len v rozsahu nutnom na prevádzku.</p>
   <h2>8. Cookies</h2>
@@ -1195,7 +1293,7 @@
   <h2>4. Dodacie podmienky</h2>
   <p>Termíny dodania sú stanovené individuálne. Poskytovateľ nie je zodpovedný za omeškanie spôsobené neskorým poskytnutím podkladov zo strany klienta.</p>
   <h2>5. Reklamácie</h2>
-  <p>Klient je oprávnený reklamovať dielo do 14 dní od jeho odovzdania. Reklamáciu zasielajte písomne na info@matewlogic.com s popisom nedostatkov. Poskytovateľ sa zaväzuje reklamáciu vyriešiť do 30 pracovných dní.</p>
+  <p>Klient je oprávnený reklamovať dielo do 14 dní od jeho odovzdania. Reklamáciu zasielajte písomne na contact@matewlogic.com s popisom nedostatkov. Poskytovateľ sa zaväzuje reklamáciu vyriešiť do 30 pracovných dní.</p>
   <h2>6. Duševné vlastníctvo</h2>
   <p>Po uhradení celkovej ceny prechádza právo na používanie dodaného diela na klienta. Poskytovateľ si vyhradzuje právo uviesť projekt v referencičnom portfóliu, pokiaľ klient nevznesie námietku.</p>
   <h2>7. Zodpovednosť</h2>
@@ -1219,7 +1317,7 @@
   <h2>Správa cookies</h2>
   <p>Cookies môžete kedykoľvek vymazať alebo zakázať v nastaveniach vášho prehliadača. Vypnutie nevyhnutných cookies môže ovplyvniť funkčnosť stránky.</p>
   <h2>Kontakt</h2>
-  <p>Otázky ohľadom cookies zasielajte na info@matewlogic.com.</p>
+  <p>Otázky ohľadom cookies zasielajte na contact@matewlogic.com.</p>
   <br>
   <a href="#" onclick="showMain()" class="btn-primary" style="display:inline-block;padding:0.7rem 1.5rem;background:var(--orange);color:#fff;border-radius:8px;font-family:'Barlow',sans-serif;font-weight:700;">← Späť na stránku</a>
 </div>
@@ -1252,7 +1350,7 @@
     <div class="footer-links">
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="mailto:info@matewlogic.com">info@matewlogic.com</a></li>
+        <li><a href="mailto:contact@matewlogic.com">contact@matewlogic.com</a></li>
         <li><a href="#kontakt">Bezplatná konzultácia</a></li>
       </ul>
     </div>
