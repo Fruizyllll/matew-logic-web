@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Pozn.: 'output: standalone' je pre self-hosting/Docker. Na Verceli sa
+  // nepoužíva (Vercel rieši build sám), preto je odstránené.
 
   // Security: Remove X-Powered-By header
   poweredByHeader: false,
