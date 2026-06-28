@@ -1,0 +1,53 @@
+/* MatewLogic brand palette — oranžová (primary), čierna (secondary), biela (tertiary) */
+
+:root {
+  /* Brand — Orange */
+  --color-primary: #ff6a00;
+  --color-primary-hover: #ff8124;
+  --color-primary-strong: #e55400;
+  --color-primary-soft: #ffb27a;
+  --color-primary-tint: rgba(255, 106, 0, 0.12);
+  --color-primary-glow: rgba(255, 106, 0, 0.45);
+
+  /* Ink — Black scale (dark surfaces) */
+  --color-ink: #0a0a0b;
+  --color-ink-900: #101012;
+  --color-ink-800: #16161a;
+  --color-ink-700: #1f1f24;
+  --color-ink-600: #2a2a31;
+
+  /* Paper — White scale (light surfaces) */
+  --color-paper: #ffffff;
+  --color-paper-soft: #faf9f7;
+  --color-paper-muted: #f2f0ec;
+
+  /* Semantic surfaces (default = dark theme baseline) */
+  --color-background: var(--color-ink);
+  --color-background-secondary: var(--color-ink-900);
+  --color-background-tertiary: var(--color-ink-800);
+
+  /* Text on dark */
+  --color-text-primary: #f7f6f4;
+  --color-text-secondary: #b4b2ad;
+  --color-text-tertiary: #7c7a76;
+  --color-text-inverse: #0a0a0b;
+
+  /* Text on light surfaces */
+  --color-text-on-light-primary: #0a0a0b;
+  --color-text-on-light-secondary: #4a4843;
+  --color-text-on-light-tertiary: #6f6d68;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-hover: rgba(255, 255, 255, 0.22);
+  --color-border-light: rgba(10, 10, 11, 0.10);
+
+  /* Feedback */
+  --color-success: #22c55e;
+  --color-success-light: #dcfce7;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-light: #fee2e2;
+  --color-info: var(--color-primary);
+}
